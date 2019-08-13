@@ -1,0 +1,35 @@
+@import "_variables.scss";
+
+@keyframes animated-stripes {
+    from {
+        transform: translateY(-$stripe-height);
+    }
+    to {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes animated-lines {
+    from {
+        transform: translateY($line-height);
+    }
+    to {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes opacity-change1 {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+@keyframes opacity-change2 {
+	0%, 100%, 50% { opacity: 0; }
+	25% { opacity: 0.5; }
+	75% { opacity: 0.5; }
+}
+
+@keyframes opacity-change3 {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
