@@ -1,4 +1,34 @@
 "use strict";
 
-console.log("Hello World from main.js! \nChange this message, and make sure it changes in the browser \nto verify that you're working in the right files.");
+var stripesContainer = document.querySelector('.stripes');
+var horizontalLinesContainer = document.querySelector('.horizontal-lines');
+var verticalLinesContainer = document.querySelector('.vertical-lines');
+
+for (var i = 0; i < 19; i++) {
+  var stripeOuter = document.createElement('div');
+  var stripeInner = document.createElement('div');
+  stripeOuter.classList.add("stripe", "stripe-".concat(i));
+  stripeOuter.appendChild(stripeInner);
+  stripesContainer.appendChild(stripeOuter);
+}
+
+for (var _i = 0; _i < 15; _i++) {
+  var lineOuter = document.createElement('div');
+  var lineInner = document.createElement('div');
+  lineOuter.classList.add("h-line", "h-line-".concat(_i));
+  lineOuter.appendChild(lineInner);
+  horizontalLinesContainer.appendChild(lineOuter);
+}
+
+for (var _i2 = 0; _i2 < 8; _i2++) {
+  var _lineOuter = document.createElement('div');
+
+  var _lineInner = document.createElement('div');
+
+  _lineOuter.classList.add("v-line", "v-line-".concat(_i2));
+
+  _lineOuter.appendChild(_lineInner);
+
+  verticalLinesContainer.appendChild(_lineOuter);
+}
 //# sourceMappingURL=main.js.map

@@ -1,2 +1,362 @@
+@-webkit-keyframes animated-stripes {
+	from {
+		-webkit-transform: translateY(-3vh);
+		        transform: translateY(-3vh);
+	}
+	to {
+		-webkit-transform: translateY(0vh);
+		        transform: translateY(0vh);
+	}
+}
+
+@keyframes animated-stripes {
+	from {
+		-webkit-transform: translateY(-3vh);
+		        transform: translateY(-3vh);
+	}
+	to {
+		-webkit-transform: translateY(0vh);
+		        transform: translateY(0vh);
+	}
+}
+
+@-webkit-keyframes animated-lines {
+	from {
+		-webkit-transform: translateY(6.923vh);
+		        transform: translateY(6.923vh);
+	}
+	to {
+		-webkit-transform: translateY(0vh);
+		        transform: translateY(0vh);
+	}
+}
+
+@keyframes animated-lines {
+	from {
+		-webkit-transform: translateY(6.923vh);
+		        transform: translateY(6.923vh);
+	}
+	to {
+		-webkit-transform: translateY(0vh);
+		        transform: translateY(0vh);
+	}
+}
+
+@-webkit-keyframes opacity-change1 {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+@keyframes opacity-change1 {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes opacity-change2 {
+	0%, 100%, 50% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.5;
+	}
+}
+
+@keyframes opacity-change2 {
+	0%, 100%, 50% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.5;
+	}
+}
+
+@-webkit-keyframes opacity-change3 {
+	0%, 100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes opacity-change3 {
+	0%, 100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+body {
+	background-color: darkgrey;
+}
+
+.poster-frame {
+	height: 90vh;
+	width: 58.5vh;
+	background-color: #131316;
+	margin: 5vh auto;
+	outline: .25rem solid #555555;
+	overflow: hidden;
+	position: relative;
+}
+
+.sun {
+	height: 40vh;
+	width: 40vh;
+	background-color: purple;
+	-webkit-transform: translateY(5vh) translateX(25%);
+	    -ms-transform: translateY(5vh) translateX(25%);
+	        transform: translateY(5vh) translateX(25%);
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	z-index: 2;
+}
+
+.sun .sun-color-1, .sun .sun-color-2, .sun .sun-color-3 {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.sun .sun-color-1 {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#EEBAA5), color-stop(70%, #DE7D8E));
+	background-image: -webkit-linear-gradient(#EEBAA5, #DE7D8E 70%);
+	background-image: linear-gradient(#EEBAA5, #DE7D8E 70%);
+	-webkit-animation: opacity-change1;
+	        animation: opacity-change1;
+	-webkit-animation-duration: 10s;
+	        animation-duration: 10s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+
+.sun .sun-color-2 {
+	background: #5583BE;
+	-webkit-animation: opacity-change2;
+	        animation: opacity-change2;
+	-webkit-animation-duration: 10s;
+	        animation-duration: 10s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+
+.sun .sun-color-3 {
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #EF4700), color-stop(90%, #FF9919));
+	background-image: -webkit-linear-gradient(#EF4700 20%, #FF9919 90%);
+	background-image: linear-gradient(#EF4700 20%, #FF9919 90%);
+	-webkit-animation: opacity-change3;
+	        animation: opacity-change3;
+	-webkit-animation-duration: 10s;
+	        animation-duration: 10s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+
+.sun .stripes {
+	-webkit-animation-name: animated-stripes;
+	        animation-name: animated-stripes;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	z-index: 10;
+	position: relative;
+}
+
+.sun .stripes div {
+	height: 3vh;
+	margin: 0;
+	width: 100%;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
+}
+
+.sun .stripes div div {
+	height: 1.2vh;
+	background-color: #131316;
+}
+
+.city-wrapper {
+	position: absolute;
+	z-index: 101;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.city-wrapper .city-buildings {
+	width: 100%;
+	height: 60%;
+	position: absolute;
+	background-image: url(../../dist/img/skyline.png);
+	background-size: 151%;
+	background-position-x: 51%;
+	-webkit-transform: scaleY(0.65);
+	    -ms-transform: scaleY(0.65);
+	        transform: scaleY(0.65);
+	top: 12vh;
+	background-repeat: no-repeat;
+	-webkit-filter: brightness(0.7);
+	        filter: brightness(0.7);
+	z-index: 10;
+}
+
+.city-wrapper .city-skyline {
+	width: 100%;
+	height: 57%;
+	position: absolute;
+	background-image: url(../../dist/img/Skyline.svg);
+	background-size: 110%;
+	background-position-x: 45%;
+	background-position-y: 100%;
+	-webkit-transform: scaleY(0.85);
+	    -ms-transform: scaleY(0.85);
+	        transform: scaleY(0.85);
+	top: 8vh;
+	background-repeat: no-repeat;
+	-webkit-filter: brightness(0.5);
+	        filter: brightness(0.5);
+	z-index: 9;
+}
+
+.city-wrapper .city-building {
+	width: 100%;
+	height: 57%;
+	position: absolute;
+	background-image: url("../../dist/img/empire state building.png");
+	background-size: 148%;
+	background-position-x: 86%;
+	background-position-y: 120%;
+	-webkit-transform: scaleY(0.85);
+	    -ms-transform: scaleY(0.85);
+	        transform: scaleY(0.85);
+	top: 8vh;
+	background-repeat: no-repeat;
+	-webkit-filter: brightness(0.3);
+	        filter: brightness(0.3);
+	z-index: 9;
+}
+
+.sunset {
+	background: -webkit-gradient(linear, left bottom, left top, from(#ff0202), to(rgba(125, 185, 232, 0)));
+	background: -webkit-linear-gradient(bottom, #ff0202 0%, rgba(125, 185, 232, 0) 100%);
+	background: linear-gradient(to top, #ff0202 0%, rgba(125, 185, 232, 0) 100%);
+	position: absolute;
+	width: 100%;
+	height: 15vh;
+	top: 38vh;
+	opacity: 0.5;
+}
+
+.grid {
+	width: 100%;
+	height: 90vh;
+	position: absolute;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-transform: perspective(9vh) rotateX(67deg) scaleX(5.6) translate3d(0vh, 9vh, -65vh);
+	        transform: perspective(9vh) rotateX(67deg) scaleX(5.6) translate3d(0vh, 9vh, -65vh);
+	box-shadow: 2vh 0px 67vh 57vh rgba(255, 2, 2, 0.1);
+	top: -1vh;
+}
+
+.grid .horizontal-lines, .grid .vertical-lines {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.75;
+}
+
+.grid .horizontal-lines {
+	-webkit-animation: animated-lines;
+	        animation: animated-lines;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+
+.grid .horizontal-lines div {
+	width: 100%;
+	height: 6.923vh;
+}
+
+.grid .horizontal-lines div div {
+	width: 100%;
+	height: .5vh;
+	background-color: blue;
+	box-shadow: 0px 0px 13px 2px rgba(20, 47, 184, 0.5);
+}
+
+.grid .vertical-lines {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: start;
+	        justify-content: flex-start;
+}
+
+.grid .vertical-lines div {
+	height: 100%;
+	width: 14.2857143%;
+}
+
+.grid .vertical-lines div div {
+	width: 0.15vh;
+	height: 100%;
+	background-color: blue;
+	box-shadow: 0px 0px 13px 2px rgba(20, 47, 184, 0.5);
+}
+
+.grid .h-line-0, .grid .v-line-0 {
+	visibility: hidden;
+}
+
+.car {
+	position: absolute;
+	width: 100%;
+	height: 50vh;
+	background-image: url(../../dist/img/car_4.gif);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 1000;
+	top: 30vh;
+}
 
 /*# sourceMappingURL=main.css.map */
