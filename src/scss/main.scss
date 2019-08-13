@@ -14,11 +14,51 @@ body {
     position: relative;
 }
 
+.logo {
+    width: 100%;
+    height: 25vh;
+    background-image: url(../../dist/img/logo.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 100%;
+    z-index: 600;
+    background-position-x: 50%;
+    background-position-y: 50%;
+}
+
+.divider {
+    width: 100%;
+    height: 40vh;
+    background-image: url(../../dist/img/divider.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 100%;
+    z-index: 600;
+    background-position-x: 50%;
+    background-position-y: 69%;
+    transform: scaleY(.4) scaleX(.7);
+    filter: opacity(0.6) hue-rotate(-30deg) saturate(.5);
+}
+
+.pattern {
+    position: absolute;
+    top: -24vh;
+    left: 0;
+    width: 100%;
+    background-size: 50%;
+    height: 60%;
+    z-index: 4;
+    background-image: url(../../dist/img/pattern.svg);
+    background-repeat: repeat;
+    box-shadow: inset 0vh -20vh 20vh -3vh $background;
+    animation: hue-change5 20s infinite linear;
+}
+
 .sun {
     height: $sun-height;
     width: $sun-height;
     background-color: $sun-background;
-    transform: translateY(5vh) translateX(25%);
+    transform: translateY(25vh) translateX(23%);
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
@@ -78,7 +118,7 @@ body {
 .city-wrapper {
     position: absolute;
     z-index: 101;
-    top: 0;
+    top: 20vh;
     left: 0;
     height: 100%;
     width: 100%;
@@ -101,7 +141,7 @@ body {
         position: absolute;
         background-image: url(../../dist/img/Skyline.svg);
         background-size: 110%;
-        background-position-x: 45%;
+        background-position-x: 36%;
         background-position-y: 100%;
         transform: scaleY(.85);
         top: 8vh;
@@ -125,13 +165,54 @@ body {
     }
 }
 
-.sunset {
-    background: linear-gradient(to top, rgba(255,2,2,1) 0%,rgba(125,185,232,0) 100%);
+.back-gradient-up {
+    background: linear-gradient(to top, rgb(255, 2, 213) 0%,rgba(125,185,232,0) 100%);
     position: absolute;
     width: 100%;
-    height: 15vh;
-    top: 38vh;
+    height: 20vh;
+    top: 55vh;
     opacity: 0.5;
+    animation: hue-change3 20s, opacity-change6 20s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 2;
+}
+
+.back-gradient-down {
+    background: linear-gradient(to bottom, rgb(37, 0, 247) 0%,rgba(125,185,232,0) 100%);
+    position: absolute;
+    width: 100%;
+    height: 61vh;
+    top: 0vh;
+    opacity: 0.2;
+    animation: opacity-change5;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    z-index: 1;
+}
+
+.front-gradient-up {
+    background: linear-gradient(to top, #0ca5ff 0%, rgba(125, 185, 232, 0) 100%);
+    box-shadow: 0px 12px 12px -7px #116ee0c0;
+    position: absolute;
+    width: 100%;
+    height: 3vh;
+    top: 72vh;
+    opacity: 0.4;
+    z-index: 111;
+}
+
+.front-gradient-down {
+    background: linear-gradient(to bottom, rgb(2, 133, 255) 0%,rgba(125,185,232,0) 100%);
+    position: absolute;
+    width: 100%;
+    height: 16vh;
+    top: 75vh;
+    opacity: 0.5;
+    z-index: 110;
 }
 
 .grid {
@@ -141,7 +222,13 @@ body {
     transform-origin: (50% 50%);
     transform: perspective(9vh) rotateX(67deg) scaleX(5.6) translate3d(0vh, 9vh, -65vh);
     box-shadow: 2vh 0px 67vh 57vh rgba(255, 2, 2, 0.1);
-    top: -1vh;
+    top: 19vh;
+    animation: hue-change4 20s, opacity-change4 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 20s;
+    opacity: 1;
     .horizontal-lines, .vertical-lines {
         position: absolute;
         width: 100%;
@@ -162,7 +249,7 @@ body {
             }
         }
         animation: animated-lines;
-        animation-duration: 2s;
+        animation-duration: .8s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
     }
@@ -190,11 +277,147 @@ body {
     position: absolute;
     width: 100%;
     height: 50vh;
-    background-image: url(../../dist/img/car_4.gif);
-    background-size: 70%;
+    background-image: url(../../dist/img/car_4_v2.gif);
+    background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 1000;
-    top: 30vh;
+    z-index: 200;
+    top: 50vh;
+    filter: hue-rotate(55deg);
 }
+
+.headlights {
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    background-image: url(../../dist/img/headlights.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 50vh;
+    z-index: 500;
+}
+
+.headlight {
+    background: linear-gradient(to bottom, rgba(255,252,188,1) 0%,rgba(255,252,197,0.5) 14%,rgba(255,255,255,0) 100%); 
+    width: 10vh;
+    height: 20vh;
+    position: absolute;
+    border-radius: 50%;
+    top: 90vh;
+    z-index: 300;
+    opacity: .75;
+    filter: blur(15px) hue-rotate(-160deg);
+    &.headlight-left {
+        left: 12vh;
+        transform: scaleY(3) scaleX(2) rotate(15deg) perspective(14vh)skew(-6deg, -23deg);
+        &:after {
+            content: '';
+            background: linear-gradient(to bottom, rgb(255, 242, 0) 0%,rgba(255, 242, 0, .5) 14%,rgba(255,255,255,.5) 100%); 
+            width: 3vh;
+            height: 7vh;
+            position: absolute;
+            border-radius: 10%;
+            top: 0vh;
+            left: 3vh;
+            z-index: 300;
+            opacity: 0.5;   
+            animation: hue-change1;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;  
+            animation-timing-function: linear;
+        }
+    }
+    &.headlight-right {
+        left: 36vh;
+        transform: scaleY(3) scaleX(2) rotate(-15deg) perspective(14vh)skew(6deg, 23deg);
+        &:after {
+            content: '';
+            background: linear-gradient(to bottom, rgb(255, 242, 0) 0%,rgba(255, 242, 0, .5) 14%,rgba(255,255,255,.5) 100%); 
+            width: 3vh;
+            height: 7vh;
+            position: absolute;
+            border-radius: 10%;
+            top: 0vh;
+            left: 3vh;
+            z-index: 300;
+            opacity: .5;      
+            animation: hue-change2;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;     
+            animation-timing-function: linear;
+        }
+    }
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 83%;
+    top: 0vh;
+    left: 0;
+    filter: contrast(1.5);
+    background-image: url(../../dist/img/stars.png);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-size: 157%;
+    background-position-x: 70%;
+    background-position-y: 398%;
+    z-index: 1;
+    box-shadow: inset 0vh -15vh 17vh -3vh $background;
+    //animation: stars-zoom;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;     
+    animation-timing-function: linear;
+    animation-duration: 20s;
+}
+.comet-outer {
+    height: 50vh;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.comet-container {
+    position: relative;
+    height: 150%;
+    width: 20vh;
+    top: -25vh;
+    left: 10vh;
+    z-index: 40;
+    animation: rotation1 57s 4s infinite, track-left-right 15s 10s infinite;
+    animation-timing-function: linear;
+    .comet {
+        position: relative;
+        background-color: white;
+        border-radius: 120% 120% 50% 50%;
+        box-shadow: 0px 0px 12px 0px rgba(255,255,255,1);
+        transform: translateX(10vh);
+        animation: falling;
+        animation-duration: 9s;
+        animation-delay: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.38,0,0,1.06);
+        &:after {
+            content: '';
+            position: absolute;
+            height: 2.5vh;
+            width: 0.5vh;
+            border-radius: 50%;
+            background-color: lightblue;
+            top: 7.7vh;
+            opacity: 0.5;
+            box-shadow: 0px 0px 12px 1px rgb(6, 205, 255);
+        }
+    }
+}
+
+
+
+
+  
+
+  
+  
 

@@ -3,6 +3,11 @@
 var stripesContainer = document.querySelector('.stripes');
 var horizontalLinesContainer = document.querySelector('.horizontal-lines');
 var verticalLinesContainer = document.querySelector('.vertical-lines');
+var comet = document.querySelector('.comet');
+comet.addEventListener('animationiteration', function () {
+  var random = Math.random() * 30;
+  comet.style["animation-duration"] = random + 's';
+});
 
 for (var i = 0; i < 19; i++) {
   var stripeOuter = document.createElement('div');
@@ -12,7 +17,7 @@ for (var i = 0; i < 19; i++) {
   stripesContainer.appendChild(stripeOuter);
 }
 
-for (var _i = 0; _i < 15; _i++) {
+for (var _i = 0; _i < 26; _i++) {
   var lineOuter = document.createElement('div');
   var lineInner = document.createElement('div');
   lineOuter.classList.add("h-line", "h-line-".concat(_i));

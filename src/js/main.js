@@ -1,7 +1,12 @@
 let stripesContainer = document.querySelector('.stripes')
 let horizontalLinesContainer = document.querySelector('.horizontal-lines')
 let verticalLinesContainer = document.querySelector('.vertical-lines')
+let comet = document.querySelector('.comet')
 
+comet.addEventListener('animationiteration', function(){
+    let random = Math.random() * 30
+    comet.style["animation-duration"] = random + 's'
+})
 
 for (let i=0; i<19; i++) {
     let stripeOuter = document.createElement('div')
@@ -11,7 +16,7 @@ for (let i=0; i<19; i++) {
     stripesContainer.appendChild(stripeOuter)
 }
 
-for (let i=0; i<15; i++) {
+for (let i=0; i<26; i++) {
     let lineOuter = document.createElement('div')
     let lineInner = document.createElement('div')
                         
