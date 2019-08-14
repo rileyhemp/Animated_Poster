@@ -14,6 +14,25 @@ body {
     position: relative;
 }
 
+.hidden {
+    display: none;
+}
+
+.desaturated {
+    filter: saturate(0) !important;
+}
+
+.logo-clickable {
+    background-color: rgba(0,0,0,0);
+    width: 38vh;
+    left: 10vh;
+    top: 4.5vh;
+    height: 15vh;
+    position: absolute;
+    z-index: 6000;
+    cursor: pointer;
+}
+
 .logo {
     width: 100%;
     height: 25vh;
@@ -47,11 +66,23 @@ body {
     width: 100%;
     background-size: 50%;
     height: 60%;
-    z-index: 4;
+    z-index: 2;
     background-image: url(../../dist/img/pattern.svg);
     background-repeat: repeat;
     box-shadow: inset 0vh -20vh 20vh -3vh $background;
     animation: hue-change5 20s infinite linear;
+}
+
+.sun-clickable {
+    height: $sun-height;
+    width: $sun-height;
+    opacity: 0;
+    transform: translateY(25vh) translateX(23%);
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 200;
+    cursor: pointer;
 }
 
 .sun {
@@ -113,6 +144,17 @@ body {
             }
         }
     }
+}
+
+.city-building-clickable {
+    position: absolute;
+    z-index: 5000;
+    height: 20vh;
+    width: 8vh;
+    background-color: rgba(0,0,0,0);
+    top: 45vh;
+    left: 45%;
+    cursor: pointer;
 }
 
 .city-wrapper {
@@ -199,9 +241,9 @@ body {
     box-shadow: 0px 12px 12px -7px #116ee0c0;
     position: absolute;
     width: 100%;
-    height: 3vh;
-    top: 72vh;
-    opacity: 0.4;
+    height: 6vh;
+    top: 69vh;
+    opacity: 0.3;
     z-index: 111;
 }
 
@@ -213,6 +255,16 @@ body {
     top: 75vh;
     opacity: 0.5;
     z-index: 110;
+}
+
+.grid-clickable {
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+    top: 75vh;
+    background-color: rgba(0,0,0,0);
+    z-index: 501;
+    cursor: pointer;
 }
 
 .grid {
@@ -272,6 +324,76 @@ body {
     }
 }
 
+.headlights-clickable {
+    .light {
+        position: absolute; 
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0);
+        z-index: 2000;
+        cursor: pointer;
+        &.light1 {
+            top: 69.5vh;
+            left: 22.5vh;
+            height: 2.7vh;
+            width: 2.7vh;
+        }
+        &.light2 {
+            top: 69.5vh;
+            left: 33.4vh;
+            height: 2.7vh;
+            width: 2.7vh;
+        }
+        &.light3 {
+            top: 75.7vh;
+            left: 23.9vh;
+            height: 1.9vh;
+            width: 1.9vh;
+        }
+        &.light4 {
+            top: 75.7vh;
+            left: 32.7vh;
+            height: 1.9vh;
+            width: 1.9vh;
+        }
+        &.light5 {
+            top: 76.65vh;
+            left: 30.8vh;
+            height: .7vh;
+            width: .7vh;
+        }
+        &.light6 {
+            top: 76.65vh;
+            left: 27vh;
+            height: .7vh;
+            width: .7vh;
+        }
+        &.left-blinker {
+            top: 70.2vh;
+            left: 19.8vh;
+            height: 1vh;
+            width: 1vh;
+        }
+        &.right-blinker {
+            top: 70.2vh;
+            left: 38.5vh;
+            height: 1vh;
+            width: 1vh;
+        }
+        &.blinkers {
+            background-color: red;
+            box-shadow: 0px 0px 5px 2px rgba(255,0,0,1);
+            animation: blinker-animation 1s infinite;
+            height: .3vh;
+            width: .3vh;
+        }
+    }
+}
+
+
+
+.light-off {
+    background-color: rgba(0,0,0,0.3) !important;
+}
 
 .car {
     position: absolute;
