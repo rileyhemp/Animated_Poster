@@ -897,29 +897,6 @@ body {
 	width: .7vh;
 }
 
-.headlights-clickable .light.left-blinker {
-	top: 70.2vh;
-	left: 19.8vh;
-	height: 1vh;
-	width: 1vh;
-}
-
-.headlights-clickable .light.right-blinker {
-	top: 70.2vh;
-	left: 38.5vh;
-	height: 1vh;
-	width: 1vh;
-}
-
-.headlights-clickable .light.blinkers {
-	background-color: red;
-	box-shadow: 0px 0px 5px 2px red;
-	-webkit-animation: blinker-animation 1s infinite;
-	        animation: blinker-animation 1s infinite;
-	height: .3vh;
-	width: .3vh;
-}
-
 .light-off {
 	background-color: rgba(0, 0, 0, 0.3) !important;
 }

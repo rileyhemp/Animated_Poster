@@ -112,23 +112,13 @@ console.log(lights);
 
 for (var _i3 = 0; _i3 < lights.length; _i3++) {
   lights[_i3].addEventListener('click', function () {
-    if (this.classList.contains('main-headlights')) {
-      this.classList.toggle('light-off');
+    this.classList.toggle('light-off');
 
-      if (this.classList.contains('light1')) {
-        document.querySelector('.headlight-left').classList.toggle('hidden');
-      } else if (this.classList.contains('light2')) {
-        document.querySelector('.headlight-right').classList.toggle('hidden');
-      } else return;
-    } else {
-      this.classList.toggle('blinkers');
-
-      if (this.classList.contains('left-blinker')) {
-        document.querySelector('.right-blinker').classList.remove('blinkers');
-      } else {
-        document.querySelector('.left-blinker').classList.remove('blinkers');
-      }
-    }
+    if (this.classList.contains('light1')) {
+      document.querySelector('.headlight-left').classList.toggle('hidden');
+    } else if (this.classList.contains('light2')) {
+      document.querySelector('.headlight-right').classList.toggle('hidden');
+    } else return;
   });
 }
 
