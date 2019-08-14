@@ -44,6 +44,8 @@ sunClickable.addEventListener('click', function(){
     let gradient1 = document.querySelector('.back-gradient-down')
     let gradient2 = document.querySelector('.front-gradient-down')
     let gradient3 = document.querySelector('.front-gradient-up')
+    let horizontalLines = document.querySelector('.horizontal-lines')
+    let verticalLines = document.querySelector('.vertical-lines')
     let car = document.querySelector('.car')
     let hues1 = [0, 45, 90, 135, 180, 225, 270, 315]
     let hues2 = [0, 90, 180, 270]
@@ -61,6 +63,8 @@ sunClickable.addEventListener('click', function(){
     gradient1.style.filter = `hue-rotate(${hues1[index1]}deg)`
     gradient2.style.filter = `hue-rotate(${hues1[index1]}deg)`
     gradient3.style.filter = `hue-rotate(${hues1[index1]}deg)`
+    horizontalLines.style.filter = `hue-rotate(${hues1[index1]}deg)`
+    verticalLines.style.filter = `hue-rotate(${hues1[index1]}deg)`
     car.style.filter = `hue-rotate(${hues1[index1]}deg)`
 })
 

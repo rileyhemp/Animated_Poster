@@ -46,6 +46,8 @@ sunClickable.addEventListener('click', function () {
   var gradient1 = document.querySelector('.back-gradient-down');
   var gradient2 = document.querySelector('.front-gradient-down');
   var gradient3 = document.querySelector('.front-gradient-up');
+  var horizontalLines = document.querySelector('.horizontal-lines');
+  var verticalLines = document.querySelector('.vertical-lines');
   var car = document.querySelector('.car');
   var hues1 = [0, 45, 90, 135, 180, 225, 270, 315];
   var hues2 = [0, 90, 180, 270];
@@ -66,6 +68,8 @@ sunClickable.addEventListener('click', function () {
   gradient1.style.filter = "hue-rotate(".concat(hues1[index1], "deg)");
   gradient2.style.filter = "hue-rotate(".concat(hues1[index1], "deg)");
   gradient3.style.filter = "hue-rotate(".concat(hues1[index1], "deg)");
+  horizontalLines.style.filter = "hue-rotate(".concat(hues1[index1], "deg)");
+  verticalLines.style.filter = "hue-rotate(".concat(hues1[index1], "deg)");
   car.style.filter = "hue-rotate(".concat(hues1[index1], "deg)");
 }); //Lights up the Chrysler building 
 
